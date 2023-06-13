@@ -15,15 +15,15 @@ function onFormInput(evt) {
   localStorage.setItem(storageKey, JSON.stringify(inputData));
 }
 
+function onReload() {
+  formEmail.value = inputData.email || '';
+  formMessage.value = inputData.message || '';
+}
+onReload();
+
 function onSubmit(evt) {
   evt.preventDefault();
   localStorage.removeItem(storageKey);
   evt.target.reset();
   inputData = {};
 }
-
-function onReload() {
-  formEmail.value = inputData.email || '';
-  formMessage.value = inputData.message || '';
-}
-onReload();
